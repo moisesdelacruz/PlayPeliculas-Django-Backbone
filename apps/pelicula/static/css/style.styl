@@ -1,0 +1,727 @@
+gris = #343838
+blanco = #FCFCF9
+turquesa = #31668e
+negroClaro = #414040
+negro = #1e1e1e
+azulClaro = #459FFF
+/*turquesa = #A8C545*/
+grisClaro = #DFD3B6
+
+@import "styleIcon.styl"
+
+body
+	background-image url('../img/fondo.png')
+	font-family "open sans", "Arial"
+	font-size 16px
+	padding-top 90px
+	-webkit-box-sizing border-box
+	-moz-box-sizing border-box
+	-ms-box-sizing border-box
+	-o-box-sizing border-box
+	
+
+.u-bodyOpacity
+	display none
+	position fixed
+	top 0
+	bottom 0
+	left 0
+	right 0
+	background rgba(negro, .45)	
+	z-index 2
+/* Header*/
+
+.Header
+	background-color gris
+	border #777 .3px solid 
+	box-shadow black -2px .1px 25px
+	opacity .97
+	position fixed
+	top 0
+	left 0
+	right 0
+	width 100%
+	z-index 2
+	 
+	.Header-Contenedor
+		max-width 1600px
+		margin auto
+		overflow hidden
+		
+		.botonBuscar
+			color #ddd
+			display none
+			float right 
+			font-size 20px
+			margin-top 1px
+			padding .7em .2em
+			text-decoration none
+			&:hover
+				color azulClaro
+			&:after
+				content ''
+				margin-left  10px
+				opacity .2
+				border-left 3px #ccc solid
+					
+		/* Accordeon Barra Buscar */
+			
+		.accordion-content
+			//background-color negro
+			//background-image linear-gradient(to bottom,rgba(negro,.9) 0,rgba(#999,.1) 100%)
+			background-image url('../img/fondo3.png')
+			clear both
+			left 0
+			padding .3em 0
+			position absolute
+			right 0
+			top 54px
+			
+			.Busqueda
+				clear both
+				display block
+				margin 0 auto
+				position relative			
+				width 70%
+				max-width 1300px
+				border-radius 3px
+				
+				.Busqueda-barra
+					display inline-block
+					position relative
+					width 60%
+					
+
+					.Busqueda-formInputText
+						background #ddd
+						border 1px gris solid
+						border-radius 50px
+						outline none 
+						margin-left 1%
+						padding .3em 0
+						text-indent 35px
+						width 97% 
+						&:focus
+							border-color azulClaro
+							background blanco
+							
+					.Busqueda-formBoton
+						background none
+						border-style none
+						border-radius 50%
+						color #777
+						font-weight bold
+						margin 0
+						outline none
+						position absolute
+						top 5px
+						left 1%
+						&:hover
+							color turquesa
+				
+				.Conten-selectores
+					display inline-block
+					.Conten-selec
+						border-radius 4px
+						background #F1f1f1
+						max-width 200px
+						color gris
+						font-weight bolder
+						height 30px
+						outline none
+						border 1px gris solid
+						width 32%
+						&:hover
+							border-color azulClaro
+							box-shadow 0 2px 10px 2px negroClaro 
+						
+							
+
+		.Header-contenTitulo
+			.Header-logoContenedor
+				float left
+				&:hover
+					transition: all .5s
+					transform: rotate(360deg)
+							
+				
+				.Header-logo
+					margin 0
+					width 50px
+				
+			.Header-titulo
+				display inline-block
+				color blanco
+				font-size 24px
+				margin 0
+				margin-top .3em
+				padding 0
+				text-shadow black 1px 2px 10px
+		
+		/*Botonones MenuMobile*/		
+
+		.MenuMobile
+			display none
+			position relative
+			
+			.botonMenu 
+				display block
+				color blanco
+				font-size 30px
+				padding .4em .2em 
+				position relative
+				text-decoration none
+				top -3px
+			
+		/* Menu Principal*/
+							
+		.Menu 
+			float right
+			
+			.Menu-lista 
+				list-style none
+				padding 0
+				
+				.Menu-item 
+					display inline-block
+					margin-right .4em 
+							
+					.Menu-link
+						border-bottom none .3em solid
+						color blanco
+						font-weight bold
+						margin 0
+						padding .8em .5em 
+						text-decoration none
+						transition all .2s
+					
+						&:hover
+							border-bottom azulClaro .3em solid
+							color azulClaro
+
+
+/* Carrusel Cartelera */
+
+.Cartelera
+
+	border none
+	border-top 3px gris solid
+	font-size 20px
+	margin 0 auto 1em auto
+	max-width 1400px
+	min-width 1%
+	padding 0
+	text-align center
+	width 90%
+	
+	legend
+		span
+			background gris
+			border-radius .1em
+			color blanco
+			display inline-block
+			font-size 30px
+			font-weight bolder
+			margin 10px
+			padding 0 .2em
+			
+	.form_container
+		background-image url('../img/fondo2.jpg')
+		//background rgb(30,30,30) 
+		border 10px negroClaro solid
+		padding 4px 0
+		border-radius 3px
+		overflow hidden
+		position relative
+	
+		
+		.slideContainer
+			white-space nowrap
+			width 1px
+			
+			.slide
+				display inline-block
+				vertical-align top 
+				
+				a
+					background turquesa
+					border-radius .1em
+					display inline-block
+					height 200px
+					margin 0 0 0 20px
+					overflow hidden
+					width 150px
+					
+					img
+						height 200px
+						width 100%
+						border-radius  .1em
+						&:hover
+							opacity .8 
+							
+							
+					
+
+	.direccion 
+		background-image linear-gradient(#5490bd,#31668e)
+		border none
+		border-radius 2px
+		bottom 0
+		box-shadow 0 20px 10px black
+		color gris
+		font-size 1em
+		font-weight bolder
+		outline none
+		position absolute
+		top 0
+		&:hover
+			background-image linear-gradient(#31668e,#5490bd)
+		
+	.right
+		right 0
+	.left 
+		left 0
+
+/* Contenedor Principal */
+
+.ContenPrincipal
+	border-radius .2em
+	//box-shadow 0px 0px 10px 1px rgba(#999,.5)
+	margin 0 auto
+	margin-top 15px
+	margin-bottom 1em
+	max-width 1600px
+	overflow hidden
+	width 95%
+	
+
+	/*Descripcion Contenedor*/
+	
+	.Descripcion
+		display none
+		border-radius .2em
+		box-shadow 0px 2px 8px 8px rgba(0,0,0, .6)
+		border-radius .2em
+		top 5%
+		left 5%
+		right 5%
+		margin-left 0
+		overflow auto
+		margin 0 auto
+		max-height 90%
+		max-width 1200px
+		width 90%
+		z-index 50
+		position fixed
+		
+		&-btCerrar
+			font-size 15px
+			float right
+			clear both
+			color blanco
+			margin .2em
+			margin-top 0
+			padding .3em
+			border 1px transparent solid
+			border-radius .1em
+			&:hover
+				-webkit-background-image linear-gradient(azulClaro, #48e)
+				-o-linear-background-image gradient(azulClaro, #48e)
+				background-image linear-gradient(azulClaro, #48e)
+				border-color blanco
+				
+		.Conten-descripcion
+			background-image url('../img/fondo2.jpg')
+			border gris solid .5em 
+			border-radius .2em
+			color blanco
+			display block
+			margin 0 auto
+			width 100%
+			-webkit-box-sizing border-box
+			-moz-box-sizing border-box
+			-ms-box-sizing border-box
+			-o-box-sizing border-box 
+			
+				
+			.Descripcion-titulo
+				background azulClaro
+				border-radius .2em
+				font-size 1.4em
+				margin .2em
+				padding .3em 0
+				text-align center
+				
+				
+			.div
+				display inline-block
+				width 25%
+				overflow hidden
+				 
+				.Conten-imagePelicula
+					border azulClaro 5px solid
+					border-radius .5em
+					display block
+					margin .7em auto	
+					height 200px
+					position relative
+					width 160px
+				
+						
+					img 
+						border-radius .5em
+						height 200px
+						width 160px
+					.puntuacion
+						bottom 5px
+						left 5px
+						position absolute
+						
+						span
+							color yellow
+						
+												
+				.botones-contenedor
+					padding .7em 
+					text-align center
+					.boton-genero
+						-webkit-background-image linear-gradient(#5490bd, #31668e)
+						-o-linear-background-image gradient(#5490bd, #31668e)
+						background-image linear-gradient(#5490bd, #31668e)
+						border-radius .3em
+						border-bottom .3em transparent solid
+						color blanco
+						display inline-block
+						font-size 12px
+						font-weight bold
+						margin 2px
+						text-decoration none
+						padding .4em .6em
+						&:hover
+							background-image linear-gradient(#31668e,#5490bd)
+				
+
+			.datos
+				width 73%
+				vertical-align top
+				display inline-block
+				text-align left
+						
+				.datos-pelicula	
+					border-radius .5em
+					color blanco
+					width calc(100% - .8em)
+					font-size 12px
+					margin .3em
+					margin-top 0 
+					margin-bottom 0
+					text-align left 			
+					
+					h4
+						margin-top 1em
+						margin-bottom 1em
+						color azulClaro
+		
+		.Conten-trailer
+			width 40%
+			padding 0 0 1em 0
+			margin .3em 0 .3em 0			
+			text-align center
+			-webkit- box-sizing border-box
+			-moz- box-sizing border-box
+			-ms- box-sizing border-box
+			-o- box-sizing border-box
+			
+				
+		.ContenPrincipal-enlaces
+			padding 0
+			text-align center
+			margin 0 auto
+			.Conten-enlacesTitulo
+				border-radius .1em
+				color azulClaro
+				display block
+				font-size 1.4em
+				font-weight bolder
+				margin .2em
+				text-decoration none
+				
+			.link
+				
+				background #b5a992
+				border-bottom .3em grisClaro solid
+				border-radius .3em
+				color negro
+				display inline-block
+				font-weight 500
+				padding .5em
+				margin .3em 
+				text-decoration none
+				transition all .2s 
+				&:hover
+					background grisClaro
+					border-color #b5a992
+									
+			.icon-minus
+				background #cc4839
+												
+	
+	
+	.Conten-vertical
+		border-radius .2em
+		float right 
+		width 20%
+		padding .5em
+		margin-top 5px
+		
+		/*Contenedor Vertical Descripcion*/
+			
+		.PelisRecomendadas-titulo
+			border-bottom 3px negroClaro solid
+			text-align center
+			color azulClaro
+			font-size 1.3em
+			margin .2em
+		.PelisRecomendadas
+			text-align center
+			display block
+			width 100%
+			.imageConten
+				border-radius .2em
+				border 2px turquesa solid
+				display inline-block
+				width 45%
+				.image
+					border-radius .2em
+					display block
+					height 165px
+					width 100%
+					&:hover
+						opacity .8
+		
+		.contenido-relleno
+			border 2px gris dashed
+			display block
+			height 50px		
+			text-align center
+			width 100%
+			
+		/*Contenedor Vertical Peliculas*/	
+			
+		.Conten-listaGeneros
+			.ListaGeneros-titulo
+				color azulClaro
+				border-radius 2px
+				border-bottom 3px negroClaro solid
+				font-size 20px
+				font-weight bolder
+				padding .5em	
+				text-align center
+				margin 0
+			.ListaGeneros
+				list-style none
+				margin 0
+				padding 0
+				
+				li  
+					margin 0
+					padding 0
+					
+					.ListaGeneros-opcion
+						border-bottom 1px #005F6B solid 
+						border-radius .2em
+						color negroClaro
+						float right 
+						font-weight bolder
+						padding .5em 0
+						text-decoration none
+						width 100%
+						transition all .2s
+						
+						&:hover
+							text-shadow 0 1px 5px rgb(150,150,150, .5)  
+							color turquesa
+							border-bottom 2px turquesa solid 
+							span
+								opacity .8
+								
+						span
+							padding .2em .8em
+							background gris 
+							float right 
+							text-align right
+							text-shadow 0px .2px 0px rgb(255,255,255, .2) 
+							color azulClaro
+
+	/* Articulo Pelicula */
+				
+							
+	.Peliculas-contenPrincipal
+		width 77%
+		border-radius .2em
+		margin 0
+		padding 0
+		
+		
+		.Peliculas-articulo
+			background #5490bd
+			border-radius .2em
+			border 2px negroClaro solid		
+			display inline-block
+			margin .5%
+			position: relative
+			width 22.5%
+			transition: all .2s
+			
+			&:hover
+				box-shadow 1px 2px 3px 5px rgb(150, 150, 150, .6)
+				
+				.Peliculas-minDescripcion
+					display block
+				.Pelicula-conten
+					opacity .7
+						
+			.Peliculas-minDescripcion
+				background gris
+				background-image: linear-gradient(to bottom,rgba(120,120,120,0.9) 0,rgba(255,255,255,0) 100%)
+				border-radius .4em
+				box-shadow 0px 2px 3px 3px rgba(0,0,0, .6)
+				display none
+				left 85%		
+				position: absolute
+				padding .8em
+				top 25%
+				width 230px
+				z-index 1
+				&:before
+					content ''
+					border-top  10px transparent solid
+					border-right 20px rgba(111,111,111,.99) solid
+					border-bottom 10px transparent solid
+					left -20px
+					position: absolute
+					top 5px
+				
+				a
+					display block
+					text-align center
+					text-decoration none
+					color azulClaro
+					font-weight bolder
+					font-size 18px
+					&:hover
+						text-decoration underline
+				p 
+					font-size 12px
+					color blanco
+					
+		
+			.Pelicula-conten
+				position: relative
+						
+				.Peliculas-contenAno
+					background blanco
+					border 1px solid #5490bd
+					border-radius .2em
+					color #5490bd
+					font-weight bold
+					padding 0
+					font-size 12px
+					padding .2em .5em			
+					position absolute
+					bottom 6px
+					left 6px
+				.Peliculas-contenCalidad
+					background blanco
+					border 1px solid #5490bd
+					border-radius .2em
+					color #5490bd
+					font-weight bold
+					font-size 12px	
+					padding 0
+					padding .2em .5em		
+					position absolute
+					right 6px
+					top 6px
+				.Peliculas-imgConten
+					display block
+					.Peliculas-img
+						display block
+						width 100%
+						
+			.Peliculas-contenTitulo
+				background  #31668e	
+				margin 0
+				padding 0	
+				text-align center
+				.Peliculas-Titulo
+					display block
+					color white
+					font-size 12px
+					font-weight bolder
+					text-decoration none
+					white-space nowrap
+					
+/* Footer */
+			
+.PiePagina
+	background-color #31668e
+	box-shadow 2px 3px 7px 7px verde
+	color white
+	font-weight bold
+	overflow hidden
+	
+	.PiePagina-principal
+		margin 2em auto
+		max-width 1600px
+		overflow hidden
+		.Social
+			float right 
+			margin-right .4em
+			max-width 250px
+			.Social-titulo
+				float left  
+				margin-right 5px
+			.Social-contenIcon
+				border-left 2px rgba(255,255,255, .4)solid
+				float right 
+				list-style none
+				margin 0
+				padding 0 
+				li 
+					margin .8em 0
+					float left
+				.Social-icon
+					text-decoration none
+					color blanco
+					padding 0 .2em
+					font-size 30.1px
+					
+	
+		.PiePagina-letra
+			margin-left .4em
+			float left 
+			display inline-block
+			.PiePagina-link
+				text-decoration none
+				color white
+				&:hover
+					color gris
+					
+											 	
+@import "./responsive.styl"
+
+				
+
+
+	
+		
+
+
+
+
+
+
+
+
+

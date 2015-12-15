@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta name="descripcion" content="Portal web para descargar peliculas en audio latino desde mega y otros servidores"/>
+	<meta charset="utf-8"/> 
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+	<title>PlayPeliculas</title>
+	<!--link href='http://fonts.googleapis.com/css?family=Permanent+Marker' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:600,400' rel='stylesheet' type='text/css'-->
+	{% load static from staticfiles %}
+	<link rel="shortcut icon" type="image/x-icon" href="../static/img/icon_play.png">
+	<link rel="stylesheet" href="{% static "css/normalize.css" %}"/>
+	<link rel="stylesheet" href="{% static "css/style.css" %}"/>
+</head>
+<body>
+	<div class="u-bodyOpacity"></div>
+	<header class="Header">
+		<div class="Header-Contenedor">
+			<a href="/" class="Header-contenTitulo">
+				<figure class="Header-logoContenedor">
+					<img class="Header-logo"src="{% static "img/icon_play.png" %}"></img>
+				</figure>
+				<h1 class="Header-titulo">PlayPeliculas</h1>
+			</a>
+			<nav class="Menu">
+				<ul class="Menu-lista">
+					<li class="Menu-item"><a class="Menu-link"href="/">Inicio</a></li>
+					<li class="Menu-item"><a class="Menu-link"href="/">Peliculas</a></li>
+					<li class="Menu-item"><a class="Menu-link"href="#">Series</a></li>
+					<li class="Menu-item"><a class="Menu-link"href="#">Animes</a></li>
+					<li class="Menu-item"><a class="Menu-link"href="#">Otros</a></li>
+				</ul>
+			</nav>
+        	<div class="MenuMobile">
+        		<a href="#" class="botonMenu icon-menu"></a>
+        	</div>
+
+        	<a href="#" class="botonBuscar icon-search"></a>
+        	<div class="accordion-content">
+        		<form class="Busqueda">
+	            	<div class="Busqueda-barra">
+	            		<input class="Busqueda-formInputText" type="search" name="buscar" placeholder="Buscar...{{date|date:'D, d/m/y'}}" autocomplete="off"/>
+	            		<button class="Busqueda-formBoton"id="boton-buscar" type="submit">
+	               		<span class="icon-search"></span>
+	            		</button>
+	            	</div>
+	        		<div class="Conten-selectores">
+                		<select class="Conten-selec" id="year">
+                    		<option>Año</option>
+                    			{% for year in years %}
+                    				<option>{{year.title_year}}</option>
+                    			{% endfor %}
+						</select>
+						<select class="Conten-selec" id="gender">
+                    		<option>Genero</option>
+	                    		{% for gender in genders %}
+		                    		<option>{{gender.title_gender}}</option>
+	                    		{% endfor %}
+						</select>
+						<select class="Conten-selec" id="quality">
+							<option>Calidad</option>
+								{% for quality in quality %}
+		                    		<option>{{quality.title_quality}}</option>
+	                    		{% endfor %}
+						</select>
+					</div>
+            	</form>
+            	                
+            </div>  
+       	</div>
+	</header>
+
+	<fieldset class="Cartelera">
+		<legend><span>Cartelera</span></legend>
+		<div class='form_container '>
+			<div class="slideContainer">
+				<div class="slide">
+					{% for movie in movies %}
+						<a href="movie/{{movie.id}}"  style='text-decoration:underline;'>
+							<img src="/media/{{MEDIA_URL}}{{movie.photo}}" alt="imagen" title="CopCar">
+						</a>
+					{% endfor %}
+				</div>
+			</div>
+			<button class="direccion left" onmouseover="moveSlider('left')"> &#60; </button>
+			<button class="direccion right" onmouseover="moveSlider('right')">&#62;</button>
+		</div>
+	</fieldset>
+
+	<section class="ContenPrincipal">
+
+        <aside class="Conten-vertical">
+            <div class="Conten-listaGeneros">
+                <p class="ListaGeneros-titulo">Generos</p>
+                <ul class="ListaGeneros"> 
+					{% for gender in genders %}
+                    <li><a href="{{gender.title_gender}}" class="ListaGeneros-opcion">{{gender}}<span>1</span></a></li>
+                    {% endfor %}
+                </ul>
+            </div>
+		</aside>
+		
+		<section class="Peliculas-contenPrincipal">
+			
+		</section>
+		<section class="Descripcion">
+            
+		</section>
+
+	</section>
+
+	<footer class="PiePagina">
+		<div class="PiePagina-principal">
+			<div class="Social">
+				<h4 class="Social-titulo">Siguenos</h4>
+				<ul class="Social-contenIcon">
+					<li><a href="http://www.youtube.com/" target="_blank" class="Social-icon "><span class="icon-youtube2"></span></a></li>
+					<li><a href="https://facebook.com/" target="_blank" class="Social-icon "><span class="icon-facebook2"></span></a></li>
+					<li><a href="http://www.twitter.com/" target="_blank" class="Social-icon "><span class="icon-twitter2"></span></a></li>
+					<li><a href="https://plus.google.com/" target="_blank" class="Social-icon "><span class="icon-google-plus2"></span></a></li>
+				</ul>
+			</div>
+			<h4 class="PiePagina-letra">&copy <a href="#" class="PiePagina-link">PlayPeliculas 2015.</a> Todos Los Derechos Reservados </h4>
+		</div>
+	</footer> 
+	<script src="{% static 'javascript/vendor/jquery.min.js' %}"></script> 
+	<script src="{% static 'javascript/vendor/jquery.js' %}"></script> 
+	<script src="{% static 'javascript/vendor/script.js' %}"></script>
+	<script src="{% static 'javascript/vendor/slide.js' %}"></script>
+	<script src="{% static 'javascript/vendor/underscore.js' %}"></script>
+	<script src="{% static 'javascript/vendor/backbone.js' %}"></script>
+	
+
+	<script src="{% static 'javascript/init.js' %}"></script>
+
+	<script src="{% static 'javascript/backbone/models/model.js' %}"></script>
+	<script src="{% static 'javascript/backbone/collections/collection.js' %}"></script>
+	<script src="{% static 'javascript/backbone/routers/rutas.js' %}"></script>
+	<script src="{% static 'javascript/backbone/views/description.js' %}"></script>
+	<script src="{% static 'javascript/backbone/views/modulos/descripcion.js' %}"></script>
+	<script src="{% static 'javascript/backbone/views/modulos/filtrado.js' %}"></script>
+	<script src="{% static 'javascript/backbone/views/app.js' %}"></script>
+	<script src="{% static 'javascript/backbone/views/peliculas.js' %}"></script>
+	
+	<script src="{% static 'javascript/main.js' %}"></script>
+
+	<script type="text/template" id="peliculas-template">
+		<a href="/movie/<%= id %>/" class="Pelicula-item">
+			<div class="Pelicula-conten">
+				<div class="Peliculas-contenAno"><%= year %></div>
+				<div class="Peliculas-contenCalidad"><%= quality %></div>						
+				<figure class="Peliculas-imgConten">
+		 			<img class="Peliculas-img"  height="310"  src="{{MEDIA_URL}}<%= photo %>"></img>
+		 		</figure>
+		 	</div>
+		 	<div class="Peliculas-contenTitulo"><a href="descripcion.html" class="Peliculas-Titulo"><%= title_movie %></a></div>
+	 	</a>
+	 	<div class="Peliculas-minDescripcion">
+	 		<a href="#"><%= title_movie %></a>
+	 		<p><%= sinopsis %></p>
+	 	</div>
+	</script>
+
+	<script type="text/template" id="descripcion-template">
+            <h2 class="Descripcion-titulo"><span id="titulo"><%= title_movie %></span> <span class="Descripcion-btCerrar icon-cross-2"></span></h2>
+            <div class="div">
+                <figure class="Conten-imagePelicula">
+                    <img src="{{MEDIA_URL}}<%= photo %>" alt="">
+                    <div class="puntuacion">
+                        <span class="icon-cross-2"></span>
+                        <span class="icon-cross-2"></span>
+                        <span class="icon-cross-2"></span>
+                        <span class="icon-cross-2"></span>
+                        <span class="icon-cross-2"></span>
+                    </div>
+                </figure>
+                <div class="botones-contenedor">
+                	<% for(var i=0; i<gender.length; i++) {%>
+	                    <a href="#" class="boton-genero"><%= gender[i] %></a>
+                	<% } %>
+                </div>
+            </div>
+            <div class="datos">
+                <div class="datos-pelicula">
+                    <h4>Datos de la pelicula </h4>
+                    <%= data_movie %>
+                </div>
+
+                <div class="datos-pelicula">
+                    <h4>Sinopsis</h4>
+                    <span class="sinopsis">
+                        <%= sinopsis %>                   
+                    </span>
+                </div>
+
+                <div class="datos-pelicula">
+                    <h4>Datos Tecnicos</h4>
+                    <%= technical_data %>                 
+                </div>
+
+            </div>
+            </aside>
+            <div class="ContenPrincipal-enlaces Conten-trailer">
+                <h4 class="Conten-enlacesTitulo">Enlaces</h4>
+                    <%= links %>
+                </div>
+            </div>
+	</script>
+</body>
+</html>
