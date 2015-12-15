@@ -48,19 +48,19 @@
                 		<select class="Conten-selec" id="year">
                     		<option>Año</option>
                     			{% for year in years %}
-                    				<option>{{year.title_year}}</option>
+                    				<option value="{{year.title_year}}">{{year.title_year}}</option>
                     			{% endfor %}
 						</select>
 						<select class="Conten-selec" id="gender">
                     		<option>Genero</option>
 	                    		{% for gender in genders %}
-		                    		<option>{{gender.title_gender}}</option>
+		                    		<option value="{{gender.title_gender}}">{{gender.title_gender}}</option>
 	                    		{% endfor %}
 						</select>
 						<select class="Conten-selec" id="quality">
 							<option>Calidad</option>
 								{% for quality in quality %}
-		                    		<option>{{quality.title_quality}}</option>
+		                    		<option value="{{quality.title_quality}}">{{quality.title_quality}}</option>
 	                    		{% endfor %}
 						</select>
 					</div>
