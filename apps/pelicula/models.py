@@ -39,7 +39,7 @@ class Quality(models.Model):
 class Movie(models.Model):
 	id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
 	title_movie = models.CharField(max_length=50, unique=True)
-	release = models.BooleanField(default=False)
+	premiere = models.BooleanField(default=False)
 	year = models.ForeignKey(Year)
 	gender = models.ManyToManyField(Gender)
 	quality = models.ForeignKey(Quality)

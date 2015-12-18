@@ -4,8 +4,8 @@ from .models import Year, Gender, Quality, Movie
 # Register your models here.
 
 class MovieAdmin(admin.ModelAdmin):
-	list_display = ('title_movie', 'Gender', 'year', 'quality', 'date', 'mi_portada')
-	list_filter = ('quality', 'year', 'gender', 'release')
+	list_display = ('title_movie', 'premiere', 'Gender', 'year', 'quality', 'date', 'mi_portada')
+	list_filter = ('quality', 'year', 'gender', 'premiere')
 	search_fields = ('gender__title_gender', 'title_movie', 'year__title_year', 'quality__title_quality')
 	filter_horizontal = ('gender',)
 

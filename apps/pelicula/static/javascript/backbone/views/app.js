@@ -3,6 +3,7 @@ Pelicula.Views.App = Backbone.View.extend({
 
 	events : {
 		"keyup .Busqueda .Busqueda-barra .Busqueda-formInputText": "buscarMovie",
+		"submit .Busqueda": "buscarMovie",
 		"change .Busqueda .Conten-selectores #year": "buscarMovie",
 		"change .Busqueda .Conten-selectores #quality": "buscarMovie",
 		"change .Busqueda .Conten-selectores #gender": "buscarMovie",
