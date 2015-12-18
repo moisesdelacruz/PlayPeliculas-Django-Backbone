@@ -76,7 +76,7 @@
 			<div class="slideContainer">
 				<div class="slide">
 					{% for movie in movies %}
-						<a href="movie/{{movie.id}}"  style='text-decoration:underline;'>
+						<a href="/movie/{{movie.slug}}"  style='text-decoration:underline;'>
 							<img src="/media/{{MEDIA_URL}}{{movie.photo}}" alt="imagen" title="CopCar">
 						</a>
 					{% endfor %}
