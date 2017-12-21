@@ -14,14 +14,12 @@ Including another URLconf
     2. Add a URL to urlpatterns:  url(r'^blog/', include(blog_urls))
 """
 from django.conf.urls import include, url
+from django.conf.urls.static import static
 from django.conf import settings
 from django.contrib import admin
 
 urlpatterns = [
 	url(r'^', include('apps.pelicula.urls')),
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^static/(?P<path>.*)$', 'django.views.static.serve', { 'document_root': settings.STATIC_ROOT }),
-    url(r'^media/(?P<path>.*)$', 'django.views.static.serve', { 'document_root': settings.MEDIA_ROOT }),
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
-
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

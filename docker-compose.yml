@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+  db:
+    image: postgres
+    env_file: ./.env
+    volumes:
+      - ./.docker/postgres:/var/lib/postgresql/data
+  web:
+    build: .
+    env_file: ./.env
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - .:/webapp
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
