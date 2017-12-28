@@ -25,7 +25,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -59,7 +59,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            os.path.join(os.path.dirname(os.path.dirname(__file__)), 'static', 'templates'),
+            os.path.join(os.path.dirname(os.path.dirname(__file__)), 'templates'),
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -85,7 +85,7 @@ DATABASES = {
         'NAME': os.environ.get('POSTGRES_DB'),
         'USER': os.environ.get('POSTGRES_USER'),
         'PASSWORD': os.environ.get('POSTGRES_PASSWORD'),
-        'HOST': 'db',
+        'HOST': 'baasu.db.elephantsql.com',
         'PORT': 5432
 
     }
@@ -114,6 +114,8 @@ STATICFILES_DIRS = [
 ]
 
 STATIC_URL = '/static/'
+
+# STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
 
 MEDIA_ROOT = 'media'
 
